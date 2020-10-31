@@ -53,7 +53,15 @@ public class Main {
     }
 
     private static BigInteger[] input() {
-        return stringToBigIntMas(new Scanner(System.in).nextLine());
+        Scanner scanner = new Scanner(System.in);
+        while (true){
+            try {
+                return stringToBigIntMas(scanner.nextLine());
+            }
+            catch (Exception e){
+                System.out.println("Неверные данные, поробуйте ещё раз:");
+            }
+        }
     }
 
     private static BigInteger[] stringToBigIntMas(String str){
